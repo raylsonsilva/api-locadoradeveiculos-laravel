@@ -1,5 +1,6 @@
 <p align="center"><img src="https://bitzen.com.br/wp-content/uploads/2019/04/BITZEN-LOGO-NEW-COLORS-1.png"></p>
 
+<p align="center">
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
