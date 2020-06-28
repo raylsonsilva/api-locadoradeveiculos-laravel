@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace BitzenTecnologia\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
