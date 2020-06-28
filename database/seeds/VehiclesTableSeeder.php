@@ -8,6 +8,6 @@ class VehiclesTableSeeder extends Seeder
 
     public function run()
     {
-        factory(Vehicle::class,100)->create();
+        factory(Vehicle::class,10)->create();
     }
 }
