@@ -14,7 +14,7 @@ class CreateVehiclesTable extends Migration
             $table->string('brand');
             $table->string('model');
             $table->integer('year');
-            $table->string('board');
+            $table->string('board')->unique();
             $table->string('vehicle_type');
             $table->string('fuel_type');
             $table->decimal('first_mileage',8,2);
