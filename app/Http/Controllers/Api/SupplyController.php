@@ -3,6 +3,7 @@
 namespace BitzenTecnologia\Http\Controllers\Api;
 
 use BitzenTecnologia\Http\Controllers\Controller;
+use BitzenTecnologia\Http\Requests\SupplyRequest;
 use BitzenTecnologia\Models\Supply;
 use Illuminate\Http\Request;
 
@@ -14,14 +15,14 @@ class SupplyController extends Controller
         return Supply::all();
     }
 
-    public function store(Request $request)
+    public function store(SupplyRequest $request)
     {
-        //
+        return Supply::create($request->all());
     }
 
     public function show(Supply $supply)
     {
-        //
+        return $supply;
     }
 
     public function update(Request $request, Supply $supply)
