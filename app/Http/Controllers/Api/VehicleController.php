@@ -33,6 +33,7 @@ class VehicleController extends Controller
 
     public function destroy(Vehicle $vehicle)
     {
-        //
+        $vehicle->delete();
+        return response()->noContent();
     }
 }
