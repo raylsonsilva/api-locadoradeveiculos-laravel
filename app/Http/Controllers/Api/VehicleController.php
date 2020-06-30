@@ -25,9 +25,10 @@ class VehicleController extends Controller
         return $vehicle;
     }
 
-    public function update(Request $request, Vehicle $vehicle)
+    public function update(VehicleRequest $request, Vehicle $vehicle)
     {
-        //
+        $vehicle->update($request->all());
+        return $vehicle;
     }
 
     public function destroy(Vehicle $vehicle)
