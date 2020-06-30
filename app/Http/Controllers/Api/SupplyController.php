@@ -25,9 +25,10 @@ class SupplyController extends Controller
         return $supply;
     }
 
-    public function update(Request $request, Supply $supply)
+    public function update(SupplyRequest $request, Supply $supply)
     {
-        //
+        $supply->update($request->all());
+        return $supply;
     }
 
     public function destroy(Supply $supply)
