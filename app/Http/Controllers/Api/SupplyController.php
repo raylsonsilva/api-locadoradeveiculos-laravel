@@ -1,7 +1,8 @@
 <?php
 
-namespace BitzenTecnologia\Http\Controllers;
+namespace BitzenTecnologia\Http\Controllers\Api;
 
+use BitzenTecnologia\Http\Controllers\Controller;
 use BitzenTecnologia\Models\Supply;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,7 @@ class SupplyController extends Controller
 
     public function index()
     {
-        //
-    }
-
-    public function create()
-    {
-        //
+        return Supply::all();
     }
 
     public function store(Request $request)
@@ -24,11 +20,6 @@ class SupplyController extends Controller
     }
 
     public function show(Supply $supply)
-    {
-        //
-    }
-
-    public function edit(Supply $supply)
     {
         //
     }

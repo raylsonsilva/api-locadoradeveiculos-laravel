@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['namespace' => 'Api'], function () {
     Route::resource('vehicles', 'VehicleController', ['except' => ['create','edit']]);
+    Route::resource('supplies', 'SupplyController', ['except' => ['create','edit']]);
 });
 
 
