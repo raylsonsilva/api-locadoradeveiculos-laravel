@@ -5,7 +5,7 @@ namespace BitzenTecnologia\Http\Controllers\Api;
 use BitzenTecnologia\Http\Controllers\Controller;
 use BitzenTecnologia\Http\Requests\VehicleRequest;
 use BitzenTecnologia\Models\Vehicle;
-use Illuminate\Http\Request;
+
 
 class VehicleController extends Controller
 {
