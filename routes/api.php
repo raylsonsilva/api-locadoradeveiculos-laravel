@@ -24,6 +24,12 @@ Route::group(['namespace' => 'Api'], function ()
     Route::resource('supplies', 'SupplyController', ['except' => ['create','edit']]);
 });
 
+Route::group(['namespace' => 'Auth'], function ()
+{
+    Route::resource('roles', 'RoleController', ['except' => ['create','edit']]);
+});
+
+
 Route::prefix('reports')->group(function ()
 {
     Route::get('monthly_quantity_liters_supplied/{initialDate}/{finalDate}','Api\ReportController@getMonthlyQuantityLitersSupplied');
