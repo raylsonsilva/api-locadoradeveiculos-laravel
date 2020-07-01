@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Api'], function ()
 Route::group(['namespace' => 'Auth'], function ()
 {
     Route::resource('roles', 'RoleController', ['except' => ['create','edit']]);
+    Route::resource('permissions', 'PermissionController', ['except' => ['create','edit']]);
 });
 
 
