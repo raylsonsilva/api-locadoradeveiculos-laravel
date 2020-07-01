@@ -2,8 +2,10 @@
 
 namespace BitzenTecnologia\Http\Controllers\Auth;
 
+use BitzenTecnologia\Http\Requests\RoleRequest;
 use Illuminate\Http\Request;
 use BitzenTecnologia\Http\Controllers\Controller;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
@@ -14,9 +16,18 @@ class RoleController extends Controller
         return Role::all();
     }
 
-    public function store(Request $request)
+    public function store(RoleRequest $request)
     {
-        return Role::create(['name' => $request->name,'guard_name' => $request->guard_name]);
+        foreach ($request->permissions as $permission)
+        {
+            $permissions[] = Permission::where('name', $permission)->first();
+        }
+        if($permissions!=null)
+        {
+            $role = Role::create(['name' => $request->name,'guard_name' => $request->guard_name]);
+            $role->syncPermissions($permissions);
+            return $role;
+        }
     }
 
     public function show(Role $role)
