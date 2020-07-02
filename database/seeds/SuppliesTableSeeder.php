@@ -8,6 +8,6 @@ class SuppliesTableSeeder extends Seeder
 
     public function run()
     {
-        factory(Supply::class,20)->create();
+        factory(Supply::class,100)->create();
     }
 }
