@@ -22,6 +22,13 @@ Route::group(['namespace' => 'Api'], function ()
 {
     Route::resource('vehicles', 'VehicleController', ['except' => ['create','edit']]);
     Route::resource('supplies', 'SupplyController', ['except' => ['create','edit']]);
+    Route::resource('users', 'UserController', ['except' => ['create','edit']]);
+});
+
+Route::group(['namespace' => 'Auth'], function ()
+{
+    Route::resource('roles', 'RoleController', ['except' => ['create','edit']]);
+    Route::resource('permissions', 'PermissionController', ['except' => ['create','edit']]);
 });
 
 Route::prefix('reports')->group(function ()
