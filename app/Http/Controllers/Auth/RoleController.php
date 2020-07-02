@@ -37,8 +37,16 @@ class RoleController extends Controller
 
     public function update(Request $request, Role $role)
     {
-        $role->update(['name' => $request->name,'guard_name' => $request->guard_name]);
-        return $role;
+        foreach ($request->permissions as $permission)
+        {
+            $permissions[] = Permission::where('name', $permission)->first();
+        }
+        if($permissions!=null)
+        {
+            $role->update(['name' => $request->name,'guard_name' => $request->guard_name]);
+            $role->syncPermissions($permissions);
+            return $role;
+        }
     }
 
     public function destroy(Role $role)
