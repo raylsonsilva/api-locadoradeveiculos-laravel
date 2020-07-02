@@ -7,16 +7,14 @@ services:
         container_name: bitzen-teste-raylsonlima
         entrypoint: dockerize -template ./.docker/app/.env:.env -wait tcp://db:3306 -timeout 40s ./.docker/entrypoint.sh
         environment:
-            - _DB_HOST=db
+            - _DB_HOST=testesrh.bitzen.com.br
             - _DB_DATABASE=raylson_lima
-            - _DB_USERNAME=root
-            - _DB_PASSWORD=root
+            - _DB_USERNAME=raylson_lima
+            - _DB_PASSWORD=psQW8UEjkQd4
         volumes:
             - .:/var/www
         networks:
             - app-network
-        depends_on:
-            - db
 
     nginx:
         build: .docker/nginx
@@ -31,23 +29,6 @@ services:
             - app-network
         depends_on:
             - app
-
-    db:
-        image: mysql:5.7
-        command: --innodb-use-native-aio=0
-        container_name: mysql-database
-        restart: always
-        tty: true
-        ports:
-            - "3306:3306"
-        volumes:
-            - ./.docker/dbdata:/var/lib/mysql
-        environment:
-            - MYSQL_DATABASE=raylson_lima
-            - MYSQL_ROOT_PASSWORD=root
-            - MYSQL_USER=root
-        networks:
-            - app-network
 
 networks:
     app-network:

@@ -4,7 +4,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## API de Cadastro de Veículos [Teste Bitzen Tecnologia]
+## API de Gestão de Veículos e Abastecimentos [Teste Bitzen Tecnologia]
 
 Esse projeto foi desenvolvido com o objetivo de construir uma API que possibilite o cadastro de veículos para que posteriormente seja feito o lançamento de abastecimentos eles, com o objetivo final de gerar um relatório para acompanhar as informações de consulto e gastos de cada veículo individualmente. 
 
@@ -20,6 +20,10 @@ Para entrar em contato comigo basta enviar um email para [raylson.lima@outlook.c
 - [Laravel](https://laravel.com)
 - [MySQL](https://www.mysql.com)
 - [Docker](https://www.docker.com)
+
+## Postman Collection
+
+- [API Requests Collection](https://1drv.ms/u/s!Anj2E6g3jX4NhIMorbj0uBGuuHdfjg?e=tuj3nb)
 
 ## Licença
 
