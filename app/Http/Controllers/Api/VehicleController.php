@@ -5,6 +5,8 @@ namespace BitzenTecnologia\Http\Controllers\Api;
 use BitzenTecnologia\Http\Controllers\Controller;
 use BitzenTecnologia\Http\Requests\VehicleRequest;
 use BitzenTecnologia\Models\Vehicle;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Exceptions\UnauthorizedException;
 
 
 class VehicleController extends Controller
@@ -12,6 +14,10 @@ class VehicleController extends Controller
 
     public function index()
     {
+        if (!Auth::user()->hasRole('manager'))
+        {
+            throw new UnauthorizedException('403', 'You do not have the required authorization.');
+        }
         return Vehicle::all();
     }
 

@@ -24,7 +24,12 @@ class UserController extends Controller
         }
         if($roles!=null)
         {
-            $user = User::create($request->all());
+            $user = User::create([
+                'name' => request('name'),
+                'email' => request('email'),
+                'password' => bcrypt(request('password'))
+
+            ]);
             $user->syncRoles($roles);
             return $user;
         }
