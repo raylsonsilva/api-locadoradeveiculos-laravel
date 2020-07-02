@@ -14,14 +14,14 @@ use Illuminate\Http\Request;
 */
 
 Route::group([
-    'prefix' => 'auth'
+    'prefix' => 'auth', 'middleware' => ['auth:api']
 ], function () {
 
-    Route::middleware('auth:api')->get('/user', function (Request $request) {
+    /*Route::middleware('auth:api')->get('/user', function (Request $request) {
         return $request->user();
-    });
+    });*/
 
-    Route::group(['namespace' => 'Api', 'middleware' => ['auth:api']], function () {
+    Route::group(['namespace' => 'Api'], function () {
         Route::resource('vehicles', 'VehicleController', ['except' => ['create', 'edit']]);
         Route::resource('supplies', 'SupplyController', ['except' => ['create', 'edit']]);
         Route::resource('users', 'UserController', ['except' => ['create', 'edit']]);

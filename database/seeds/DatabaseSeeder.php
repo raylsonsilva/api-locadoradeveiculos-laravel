@@ -10,5 +10,6 @@ class DatabaseSeeder extends Seeder
         $this->call(VehiclesTableSeeder::class);
         $this->call(SuppliesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(AccessControlListSeeder::class);
     }
 }
